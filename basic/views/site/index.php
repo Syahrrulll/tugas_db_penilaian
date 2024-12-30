@@ -23,7 +23,7 @@ $this->title = 'Lembaga Akreditas';
                     <div class="card-body" style="background: linear-gradient(135deg, #ff7e5f, #feb47b); color: white; border-radius:10px;">
                         <h5 class="card-title">Data Akreditasi</h5>
                         <p class="card-text">Lihat dan kelola data akreditasi lembaga.</p>
-                        <a href="http://localhost/Github/tugas_db_penilaian/basic/web/index.php?r=akreditasi" class="btn btn-lg btn-light" style="color: #ff7e5f; border-color: #ff7e5f;">
+                        <a href="./index.php?r=akreditasi" class="btn btn-lg btn-light" style="color: #ff7e5f; border-color: #ff7e5f;">
                             <i class="fas fa-check-circle"></i> Lihat Data
                         </a>
                     </div>
@@ -36,7 +36,7 @@ $this->title = 'Lembaga Akreditas';
                     <div class="card-body" style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; border-radius:10px;">
                         <h5 class="card-title">Data Penilaian</h5>
                         <p class="card-text">Lihat dan kelola data penilaian lembaga.</p>
-                        <a href="http://localhost/Github/tugas_db_penilaian/basic/web/index.php?r=penilaian" class="btn btn-lg btn-light" style="color: #6a11cb; border-color: #6a11cb; ">
+                        <a href="./index.php?r=penilaian" class="btn btn-lg btn-light" style="color: #6a11cb; border-color: #6a11cb; ">
                             <i class="fas fa-star"></i> Lihat Data
                         </a>
                     </div>
