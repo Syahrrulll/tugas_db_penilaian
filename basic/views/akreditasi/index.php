@@ -15,19 +15,21 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="akreditasi-index">
 
-    <!-- Title and Description with Animation -->
     <div class="text-center mt-5 mb-5 animated fadeIn">
         <h1 class="display-4"><?= Html::encode($this->title) ?></h1>
         <p class="lead">Kelola dan lihat data akreditasi lembaga</p>
     </div>
 
-    <!-- Create Button with FadeIn Animation -->
     <p class="text-center animated fadeInUp">
         <?= Html::a('<i class="fas fa-plus-circle"></i> Create Akreditasi', ['create'], ['class' => 'btn btn-primary btn-lg']) ?>
     </p>
 
-    <!-- Grid View with Animation on Rows -->
-    <?= GridView::widget([
+    <?php
+    // Debugging: Cek isi dari dataProvider
+    // var_dump($dataProvider->getModels());
+    // die(); // Uncomment this line to stop execution and see the output
+
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -64,22 +66,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
         ],
-        'tableOptions' => ['class' => 'table table-bordered table-striped'],
-        'rowOptions' => function ($model, $index, $widget, $grid) {
-            return [
-                'class' => $index % 2 === 0 ? 'bg-light animated fadeInUp' : 'bg-secondary animated fadeInUp', // Animation on rows
-            ];
-        },
     ]); ?>
 
 </div>
 
-<!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<!-- Add custom CSS for animations -->
 <style>
-    /* General page styling */
     .akreditasi-index {
         padding: 30px;
         border-radius: 8px;
@@ -87,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 
     h1 {
-        color: #343a40; /* Dark text color for title */
+        color: #343a40;
         font-size: 36px;
         font-weight: 700;
     }
@@ -110,7 +103,7 @@ $this->params['breadcrumbs'][] = $this->title;
         width: 100%;
         margin-top: 20px;
         border-collapse: collapse;
-        color: #343a40; /* Dark text for table content */
+        color: #343a40;
     }
 
     .table th, .table td {
@@ -120,13 +113,13 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 
     .table th {
-        background-color: #343a40; /* Dark header */
-        color: #f8f9fa; /* Light text for header */
+        background-color: #343a40;
+        color: #f8f9fa;
         font-weight: bold;
     }
 
     .table-striped tbody tr:nth-child(even) {
-        background-color: #f8f9fa; /* Lighter background for even rows */
+        background-color: #f8f9fa;
     }
 
     .table-bordered {
@@ -161,7 +154,6 @@ $this->params['breadcrumbs'][] = $this->title;
         opacity: 0.8;
     }
 
-    /* Subtle fade-in animation for the page load */
     .akreditasi-index {
         opacity: 0;
         animation: fadeIn 1s forwards;
@@ -176,7 +168,6 @@ $this->params['breadcrumbs'][] = $this->title;
         }
     }
 
-    /* Add fade-in-up animation to buttons and rows */
     .fadeInUp {
         opacity: 0;
         animation: fadeInUp 0.8s forwards;
@@ -194,9 +185,8 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 </style>
 
-<!-- Optional: You can add more subtle animations if needed -->
 <script>
     $(document).ready(function() {
-        $('.akreditasi-index').fadeTo(1000, 1); // Smooth fade-in effect on page load
+        $('.akreditasi-index').fadeTo(1000, 1);
     });
 </script>
