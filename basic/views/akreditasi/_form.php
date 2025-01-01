@@ -15,9 +15,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'prodi_id_prodi')->textInput() ?>
 
     <?= $form->field($model, 'lembaga_id_lembaga')->textInput() ?>
-
-    <?= $form->field($model, 'akreditasi_id')->textInput() ?>
-
+    
     <?= $form->field($model, 'id')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'tanggal_mulai')->textInput() ?>

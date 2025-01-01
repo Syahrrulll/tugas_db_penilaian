@@ -31,10 +31,11 @@ class Penilaian extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id'], 'number'],
             [['prodi_id_prodi', 'indikator_id_indikator', 'tahun'], 'required'],
             [['prodi_id_prodi', 'indikator_id_indikator'], 'integer'],
             [['nilai'], 'number'],
-            [['tahun'], 'string', 'max' => 5],
+            [['tahun'], 'year', 'max' => 5],
             [['prodi_id_prodi', 'indikator_id_indikator', 'tahun'], 'unique', 'targetAttribute' => ['prodi_id_prodi', 'indikator_id_indikator', 'tahun']],
             [['indikator_id_indikator'], 'exist', 'skipOnError' => true, 'targetClass' => Indikator::class, 'targetAttribute' => ['indikator_id_indikator' => 'id_indikator']],
             [['prodi_id_prodi'], 'exist', 'skipOnError' => true, 'targetClass' => Prodi::class, 'targetAttribute' => ['prodi_id_prodi' => 'id_prodi']],
